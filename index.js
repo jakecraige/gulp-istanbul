@@ -16,6 +16,7 @@ var COVERAGE_VARIABLE = '$$cov_' + new Date().getTime() + '$$';
 var plugin = module.exports = function (opts) {
   opts = opts || {};
   opts.includeUntested = opts.includeUntested === true;
+  opts.modules = opts.modules || 'commonInterop';
   if (!opts.coverageVariable) opts.coverageVariable = COVERAGE_VARIABLE;
 
   var instrumenter = new isparta.Instrumenter(opts);

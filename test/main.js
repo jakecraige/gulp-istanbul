@@ -101,7 +101,7 @@ describe('gulp-istanbul', function () {
             .pipe(mocha())
             .on('end', function () {
               var data = istanbul.summarizeCoverage();
-              assert.equal(data.lines.pct, 75);
+              assert.equal(data.lines.pct, 66.67);
               assert.equal(data.statements.pct, 75);
               assert.equal(data.functions.pct, 50);
               assert.equal(data.branches.pct, 100);
@@ -130,8 +130,8 @@ describe('gulp-istanbul', function () {
 
               // If untested files are included, line and statement coverage
               // drops to 25%
-              assert.equal(data.lines.pct, 37.5);
-              assert.equal(data.statements.pct, 37.5);
+              assert.equal(data.lines.pct, 50);
+              assert.equal(data.statements.pct, 62.5);
               assert.equal(data.functions.pct, 25);
               assert.equal(data.branches.pct, 100);
               done();

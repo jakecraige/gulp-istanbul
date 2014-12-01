@@ -25,7 +25,9 @@
     "test": "mocha -R spec"
   },
   "dependencies": {
+    "6to5": "^1.14.6",
     "gulp-util": "^3.0.1",
+    "isparta": "^0.1.1",
     "istanbul": "^0.3.2",
     "lodash": "^2.4.1",
     "through2": "^0.6.3"

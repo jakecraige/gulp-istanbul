@@ -3,6 +3,7 @@
 var through = require('through2').obj;
 var path = require('path');
 var istanbul = require('istanbul');
+var isparta = require('isparta');
 var gutil = require('gulp-util');
 var _ = require('lodash');
 var Report = istanbul.Report;
@@ -17,7 +18,7 @@ var plugin = module.exports = function (opts) {
   opts.includeUntested = opts.includeUntested === true;
   if (!opts.coverageVariable) opts.coverageVariable = COVERAGE_VARIABLE;
 
-  var instrumenter = new istanbul.Instrumenter(opts);
+  var instrumenter = new isparta.Instrumenter(opts);
 
   return through(function (file, enc, cb) {
     cb = _.once(cb);
